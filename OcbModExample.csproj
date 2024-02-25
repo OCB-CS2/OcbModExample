@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <PATH_SC2_MANAGED Condition=" '$(PATH_SC2_MANAGED)' == '' ">..\..\Cities2_Data\Managed</PATH_SC2_MANAGED>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <BaseIntermediateOutputPath>build\obj\$(AssemblyName)</BaseIntermediateOutputPath>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{b18c73cd-2f35-4a95-b3ce-c6f7eca87cf1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OcbModExample</RootNamespace>
+    <AssemblyName>OcbModExample</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>build\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PostBuildEvent>
+      copy /Y /B "$(AssemblyName).dll" "..\..\..\$(AssemblyName).dll"
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>build\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PostBuildEvent>
+      copy /Y /B "$(AssemblyName).dll" "..\..\..\$(AssemblyName).dll"
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Game">
+      <HintPath>build\Game.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(PATH_SC2_MANAGED)\..\..\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>$(PATH_SC2_MANAGED)\..\..\BepInEx\core\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="HarmonyXInterop">
+      <HintPath>$(PATH_SC2_MANAGED)\..\..\BepInEx\core\HarmonyXInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>$(PATH_SC2_MANAGED)\..\..\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Colossal.Core">
+      <HintPath>$(PATH_SC2_MANAGED)\Colossal.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colossal.Mathematics">
+      <HintPath>$(PATH_SC2_MANAGED)\Colossal.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>$(PATH_SC2_MANAGED)\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>$(PATH_SC2_MANAGED)\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>$(PATH_SC2_MANAGED)\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>$(PATH_SC2_MANAGED)\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>$(PATH_SC2_MANAGED)\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(PATH_SC2_MANAGED)\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(PATH_SC2_MANAGED)\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Harmony\OcbModExample.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

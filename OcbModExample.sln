@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{e04c0519-a488-450a-af1b-705175004945}") = "OcbModExample", "OcbModExample.csproj", "{b18c73cd-2f35-4a95-b3ce-c6f7eca87cf1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{b18c73cd-2f35-4a95-b3ce-c6f7eca87cf1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b18c73cd-2f35-4a95-b3ce-c6f7eca87cf1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b18c73cd-2f35-4a95-b3ce-c6f7eca87cf1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{b18c73cd-2f35-4a95-b3ce-c6f7eca87cf1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9d70545a-b7d9-4d0d-b6a0-8ad2fc32c38a}
+	EndGlobalSection
+EndGlobal
